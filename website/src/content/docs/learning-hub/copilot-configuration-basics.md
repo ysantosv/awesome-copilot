@@ -949,6 +949,14 @@ Assisted Permissions are available without enabling experimental mode. In Assist
 
 Session and memory import commands accept the semantic JSONL interchange format, making it possible to bring saved session history or memory entries into Copilot CLI from an external export rather than starting from scratch.
 
+### Session AI Credit Limits
+
+Use `--max-ai-credits` to cap how many AI credits a session can spend. The limit applies session-wide, including work done by subagents, and credits used before a session was resumed count toward it. As the session approaches the limit, the CLI warns you and shows the credits used alongside the cap.
+
+### Administrator Controls for Browser Use
+
+Organization administrators can turn off the built-in Browser Use capability with the managed setting `features.browserUse`. The change also applies to sessions that are already running.
+
 ### Command-Line Parsing
 
 Command-line parsing is handled by a Rust-based grammar that mirrors what the CLI actually parses, which also generates shell completions directly from that grammar — so `copilot <TAB>` offers root flags alongside subcommands, and each subcommand only shows its own options. See [Compatibility and Migration Notes](#compatibility-and-migration-notes) for behavior changes from the previous Commander-based parser.
