@@ -3,7 +3,7 @@ title: "第 7 课 - 恢复会话与远程访问"
 description: "离开 Copilot CLI 会话后，使用 copilot --resume 或 /resume 返回，还可用 /remote 从其他设备查看会话。"
 authors:
   - GitHub Copilot Learning Hub Team
-lastUpdated: 2026-10-05
+lastUpdated: 2026-11-19
 ---
 
 会话可以暂停，而不丢失对话或工作区上下文。离开会话，稍后返回，还可以选择让其他设备访问。

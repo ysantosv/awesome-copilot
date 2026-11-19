@@ -58,11 +58,18 @@ const workshopLessonRenames = {
 };
 const workshopRedirects = Object.fromEntries(
   ["", "es-es", "ja-jp", "ko-kr", "pt-br", "zh-cn"].flatMap((locale) => {
-    const prefix = `/${locale ? `${locale}/` : ""}learning-hub/copilot-workshops/app/`;
-    return Object.entries(workshopLessonRenames).map(([previous, current]) => [
-      `${prefix}${previous}/`,
-      `${prefix}${current}/`,
-    ]);
+    const root = `/${locale ? `${locale}/` : ""}learning-hub/copilot-workshops/`;
+    const prefix = `${root}app/`;
+    return [
+      ...Object.entries(workshopLessonRenames).map(([previous, current]) => [
+        `${prefix}${previous}/`,
+        `${prefix}${current}/`,
+      ]),
+      [
+        `${root}first-steps/copilot-app/12-review/`,
+        `${root}first-steps/copilot-app/13-review/`,
+      ],
+    ];
   }),
 );
 
